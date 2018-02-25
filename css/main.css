@@ -1,0 +1,37 @@
+@font-face{
+	font-family: Roboto;
+	src: url("../fonts/Roboto-Regular.ttf");
+}
+*{
+	font-family: Roboto;
+}
+nav{
+    height: 60px;
+    width: 100%;
+    background: black;
+    color: beige;
+    margin-bottom: 8px;
+}
+nav ul{
+    list-style: none;
+    float: right;
+    width: 50%;
+    
+}
+nav li{
+    display: inline;
+    padding: 16px;
+    margin-left: 48px;
+}
+nav a{
+    text-decoration: none;
+    color: darkgrey;
+}
+nav a:hover{
+    color: whitesmoke;
+    transition-duration: 0.5s;
+    border-bottom: 1px solid white;
+}
+body{
+    margin: 0px;
+}
