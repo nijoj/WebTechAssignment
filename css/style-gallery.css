@@ -8,6 +8,9 @@
 body{
 	background: yellow;
 }
+#gallery{
+	border-bottom: 1px solid darkgray;
+}
 h1{
 	display: inline;
 	margin-right: 48px;

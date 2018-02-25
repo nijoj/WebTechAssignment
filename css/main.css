@@ -12,6 +12,16 @@ nav{
     color: beige;
     margin-bottom: 8px;
 }
+nav i{
+    margin-left: 16px;
+    margin-top:15px;
+    font-size: 30px;
+}
+nav p{
+    display: inline;
+    margin-left: 8px;
+    font-size: 30px;
+}
 nav ul{
     list-style: none;
     float: right;
