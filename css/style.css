@@ -13,11 +13,15 @@ h1{
 	margin-right: 48px;
 }
 .search{
-	width: 50vw; 
-	border: 1px solid white;
+	display: inline-block;
+	background: white;
 	border-radius: 30px;
 	height: 24px;
 	padding: 8px;
+}
+#searchfield{
+	width: 50vw; 
+	border:none;
 	font-style: italic;
 	font-size: 16px;
 }
@@ -44,4 +48,31 @@ img:hover{
 	margin:0 auto;
 	margin-top: 24px;
 	padding: 16px;
+}
+
+form{
+	padding: 16px;
+	display: inline;
+}
+form label{
+	margin-right: 8px;
+	font-weight: 700;
+}
+
+#urlbox{
+	width: 50vw; 
+	border: 1px solid white;
+	border-radius: 30px;
+	height: 16px;
+	padding: 8px;
+	font-size: 8px;
+}
+form button{
+	background: black;
+	color: beige;
+	border: none;
+	padding: 8px;
+	letter-spacing: 1px;
+	margin: 4px;
+	font-weight: 700;
 }
