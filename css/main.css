@@ -25,7 +25,7 @@ nav p{
 nav ul{
     list-style: none;
     float: right;
-    width: 50%;
+    width: 40%;
     
 }
 nav li{
@@ -41,6 +41,19 @@ nav a:hover{
     color: whitesmoke;
     transition-duration: 0.5s;
     border-bottom: 1px solid white;
+}
+#login{
+    background:rgb(48, 48, 48);
+    border: none;
+    color: white;
+    float: right;
+    height: 100%;
+    width: 80px;
+    margin-right: 32px;
+    
+}
+#login:hover{
+    background:rgb(77, 77, 77);
 }
 body{
     margin: 0px;

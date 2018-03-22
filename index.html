@@ -14,11 +14,14 @@
 <body>
 	<nav>
 		<i class="far fa-image"></i><p>Simple Gallery</p>
+		<button id="login">Login</button>
+		<p id="usertext">text</p>
 		<ul>
 			<li><a id="index" href="index.html">Home</a></li>
 			<li><a href="gallery.html">Gallery</a></li>
 			<li><a href="about.html">About</a></li>
 		</ul>
+		
 	</nav>
 
 	<div class="container" id="intro">
@@ -32,6 +35,20 @@
 	<div class="container" id="three">
 		<h2>Upload and Share..</h2>
 	</div>
-
+	<div class="login-back">
+		<div id="login-diag">
+			
+			<label for="username">Username</label>
+			<input id="username" type="text" placeholder="username">
+			<label for="password">Password</label>
+			<input id="password" type="text" placeholder="password">
+			<div>
+				<button id="login-btn">Login</button>
+				<button id="close"><i class="fas fa-times"></i></button>
+			</div>
+			<p>Password incorrect</p>
+		</div>
+	</div>
+	<script src="scripts/script.js"></script>
 </body>
 </html>
