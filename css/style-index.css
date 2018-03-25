@@ -1,7 +1,7 @@
 #index{
     border-bottom: 1px solid darkgray;
 }
-.login-back{
+.reg-back{
     width: 100%;
     height: 100%;
     background: rgba(75, 75, 75, 0.5);
@@ -12,7 +12,7 @@
     align-items: center;
     
 }
-#login-diag{
+.reg-diag{
     width: 50%;
     display: flex;
     align-items: center;
@@ -22,32 +22,32 @@
     height: 200px;
 
 }
-#login-diag button  {
+.reg-diag button  {
     padding: 4px;
     padding-left: 8px;
     padding-right: 8px;
 }
-#login-diag label{
+.reg-diag label{
     margin-bottom: 4px;
 }
-#login-diag input{
+.reg-diag input{
     border: 1px solid whitesmoke;
     border-radius: 3px;
     font-size: 1.5em;
     margin-bottom: 4px;
 }
-#login-diag input:hover{
+.reg-diag input:hover{
     border: 1px solid gray;
     
 }
-#login-btn{
+.reg_main-btn{
     background: firebrick;
     color: white;
     border: none;
     font-size: 1.2em;
   
 }
-#login-btn:hover{
+.reg_main-btn:hover{
     background: tomato;
 }
 #usertext{
