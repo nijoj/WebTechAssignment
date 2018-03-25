@@ -42,17 +42,18 @@ nav a:hover{
     transition-duration: 0.5s;
     border-bottom: 1px solid white;
 }
-#login{
+.reg-btn{
     background:rgb(48, 48, 48);
     border: none;
     color: white;
     float: right;
     height: 100%;
     width: 80px;
-    margin-right: 32px;
+    margin-right: 4px;
+    font-size: 0.9em;
     
 }
-#login:hover{
+.reg-btn:hover{
     background:rgb(77, 77, 77);
 }
 body{
