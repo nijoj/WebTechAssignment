@@ -17,12 +17,18 @@ userText.classList.add("display");
 var userData = new Object();
 
 function addUser(userName,password){
-    if(!searchUser(userName)){
+    var result = searchUser(userName);
+    if(!result){
+        if(username==""||password==""){
+            errorText.innerHTML="Fields cannot be blank";
+        }
+        else{
         userData[userName]=password;
         errorText.innerHTML="User added"
+        }
     }
     else{
-        errorText.innerHTML="User exsists"
+        errorText.innerHTML="User exsists / cant be added"
     }
     errorText.classList.remove("display")
 };
@@ -45,7 +51,6 @@ function checkUser(userName,password){
 };
 function searchUser(userName){
     if(userData[userName]==undefined) return false;
-    
     return userData[userName];
 };
 function getUser(){
