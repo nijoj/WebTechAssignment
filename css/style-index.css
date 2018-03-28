@@ -50,6 +50,13 @@
 .reg_main-btn:hover{
     background: tomato;
 }
+#sign-ext{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
 #usertext{
     color: white;
     float: right;
@@ -58,6 +65,9 @@
 }
 .display{
     display: none;
+}
+.signextra{
+    height: 400px;
 }
 .container{
     width: 100%;

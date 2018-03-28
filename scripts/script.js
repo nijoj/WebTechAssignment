@@ -4,15 +4,25 @@ var regbtn = document.querySelector(".reg_main-btn");
 var close = document.getElementById("close");
 
 var loginBack = document.querySelector(".reg-back");
+var regDiag = document.querySelector(".reg-diag");
 
 var username;
 var password;
+var confirm;
+var email;
+var phone;
 
 var errorText =document.querySelector(".reg-back p");
 var userText=document.getElementById("usertext");
 
+var signExtra = document.getElementById("sign-ext");
+
+var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+var phoneRegExp = /[0-9]{10}/;
+
 loginBack.classList.add("display");
 userText.classList.add("display");
+signExtra.style.display="none";
 
 var userData = new Object();
 
@@ -60,9 +70,14 @@ function getUser(){
 function clearValue(){
     document.getElementById("username").value="";
     document.getElementById("password").value="";
+    document.getElementById("confirm").value="";
+    document.getElementById("email").value="";
+    document.getElementById("phone").value="";
 };
 signup.addEventListener("click",function(){
     clearValue();
+    signExtra.style.display="flex";
+    regDiag.classList.add("signextra");
     errorText.classList.add("display");
     regbtn.removeEventListener("click",loginfunc);
     loginBack.classList.remove("display");
@@ -71,10 +86,30 @@ signup.addEventListener("click",function(){
 });
 function signupfunc(){
     getUser();
+    confirm = document.getElementById("confirm").value;
+    email = document.getElementById("email").value;
+    phone = document.getElementById("phone").value;
+    if(password!=confirm||password==""){
+        errorText.innerHTML="Passwords dont match / invalid";
+        errorText.classList.remove("display");
+        return;
+    }
+    else if(!emailRegExp.test(email)){
+        errorText.innerHTML="Please enter valid email";
+        errorText.classList.remove("display");
+        return;
+    }
+    else if(!phoneRegExp.test(phone)){
+        errorText.innerHTML="Please enter valid phone number";
+        errorText.classList.remove("display");
+        return;
+    }
     addUser(username,password);
 };
 login.addEventListener("click",function(){
     clearValue();
+    signExtra.style.display="none";
+    regDiag.classList.remove("signextra");
     errorText.classList.add("display");
     regbtn.removeEventListener("click",signupfunc);
     loginBack.classList.remove("display");
