@@ -25,8 +25,8 @@
 
             //if found set cookie and set message
             if($back&&$back["password"]==$_POST["password"]){
-                setcookie("auth","true",time()+86400);
-                setcookie("username",$back["username"],time()+86400);
+                setcookie("auth","true",time()+86400,"/");
+                setcookie("username",$back["username"],time()+86400,"/");
                 $message="successfully logged in";
             }
             else{

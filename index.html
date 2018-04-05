@@ -14,11 +14,17 @@
 <body>
 	<nav>
 		<i class="far fa-image"></i><p>Simple Gallery</p>
-		<button id="login">Login</button>
-		<button id="signup">Sign Up</button>
-		<button id="signup">Log Out</button>
-		<a href="userdata.html">Hi, user</a>
-
+		<?php
+			if($_COOKIE["auth"]=="true"){
+					$username = $_COOKIE["username"];
+					echo '<button id="signup">Log Out</button>
+						<a href="userdata.html" id="username">Hi, '."$username</a>";
+				}
+			else{
+				echo '<button id="login">Login</button>
+				<button id="signup">Sign Up</button>';
+			}
+		?>
 		<ul>
 			<li><a id="index" href="index.html">Home</a></li>
 			<li><a href="gallery.html">Gallery</a></li>
