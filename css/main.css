@@ -73,14 +73,13 @@ body{
     height: 100%;
     width: 100%;
     background: rgba(85, 85, 85, 0.356);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 .form-wrap{
     background: white;
     text-align: center;
-    height: 300px;
     padding: 32px;
 }
 .form-wrap label{
