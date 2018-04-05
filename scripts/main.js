@@ -55,12 +55,11 @@ function validator(signup){
             if(!emailRegExp.test(email)) message+="email invalid</br>";
             if(!phoneRegExp.test(phone)) message+="phone number invalid";
         }
+        event.preventDefault();
         if(message!=""){ 
-            event.preventDefault();
             errorText.innerHTML=message;
         }
         else if(signup){
-            event.preventDefault();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.querySelector(".form-wrap").innerHTML = this.responseText;
@@ -69,7 +68,18 @@ function validator(signup){
             };
             xhttp.open("POST", "php\\reg.php?q=signup", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("username="+username+"&password="+password+"&email="+email+"&phone="+phone);
+            xhttp.send('type=signup&username='+username+"&password="+password+"&email="+email+"&phone="+phone);
+        }
+        else{
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.querySelector(".form-wrap").innerHTML = this.responseText;
+                    validator(true);
+                }
+            };
+            xhttp.open("POST", "php\\reg.php?q=signup", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send('type=login&username='+username+"&password="+password);
         }
     });
     errorText.style.display="block";
