@@ -67,3 +67,25 @@ nav>a{
 body{
     margin: 0px;
 }
+.reg-back{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(85, 85, 85, 0.356);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-wrap{
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    padding: 32px;
+}
+.form-wrap label{
+    display: block;
+    padding: 16px;
+}
