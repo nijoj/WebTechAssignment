@@ -42,6 +42,28 @@ nav a:hover{
     transition-duration: 0.5s;
     border-bottom: 1px solid white;
 }
+nav button{
+    float: right;
+    height: 100%;
+    font-size: 1em;
+    margin-right: 4px;
+    border: none;
+    padding: 16px;
+    background: rgb(48, 48, 48);
+    color: white;
+}
+nav button:hover{
+    background: rgb(87, 87, 87);
+}
+nav>a{
+    float: right;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
 body{
     margin: 0px;
 }
