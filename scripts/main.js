@@ -1,9 +1,22 @@
 var login = document.getElementById("login");
 var signup = document.getElementById("signup");
+var logout = document.getElementById("logout");
 var regBack=document.querySelector(".reg-back");
 
 var xhttp = new XMLHttpRequest();
-
+if(logout){
+logout.addEventListener("click",function(){
+    regBack.style.display="flex";
+    
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.querySelector(".form-wrap").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "php\\reg.php?q=logout", true);
+    xhttp.send();
+});
+}
 login.addEventListener("click",function(){
     regBack.style.display="flex";
     

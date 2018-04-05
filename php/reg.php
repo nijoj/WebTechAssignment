@@ -4,7 +4,12 @@
             <label>User name <input type="text" name="username"></label>
             <label>Password <input type="password" name="password"></label>';
     if($_COOKIE["auth"]=="true"){
-        echo "user already logged in";
+        $msg = "user already logged in";
+        if($_GET["q"]=="logout"){
+            $msg = 'you are logged out <a href="index.html"><button type="button">Back</button></a>';
+            setcookie("auth","",time()-100,"/");
+        }
+        echo $msg;
         exit(0);
     }
     else if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -52,10 +57,13 @@
     }
     if($_GET["q"]=="signup"||$_POST["type"]=="signup"){
         $response.='<label>Email <input type="email" name="email"></label>
-            <label>Phone <input type="number" name="phone"></label>';
+            <label>Phone <input type="number" name="phone"></label>
+            <input type="submit" value="Sign Up">';
     }
-    $response.='<input type="submit" value="Login">
-        <a href="index.html"><button type="button">Back</button></a>
+    else{
+        $response.='<input type="submit" value="Login">';
+    }
+    $response.='<a href="index.html"><button type="button">Back</button></a>
         </form>
         <p id="error" style="color:red; text-align:center;">'."$message</p>";
     echo $response;
