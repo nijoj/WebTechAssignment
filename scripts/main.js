@@ -58,7 +58,6 @@ function validator(signup){
         if(message!=""){ 
             event.preventDefault();
             errorText.innerHTML=message;
-            errorText.style.display="block";
         }
         else if(signup){
             event.preventDefault();
@@ -73,4 +72,5 @@ function validator(signup){
             xhttp.send("username="+username+"&password="+password+"&email="+email+"&phone="+phone);
         }
     });
+    errorText.style.display="block";
 }
