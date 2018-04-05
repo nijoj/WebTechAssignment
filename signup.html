@@ -8,15 +8,55 @@
     <title>Sign Up</title>
 </head>
 <body>
-        <h1>Sign Up</h1>
-        <hr>
-        <form action="login.html" method="POST">
-            <label>User name <input type="text"></label>
-            <label>Password <input type="password"></label>
-            <label>Email <input type="email"></label>
-            <label>Phone <input type="number"></label>
-            <input type="submit" value="Login">
-            <a href="index.html"><button type="button">Back</button></a>
-        </form>
-    </body>
+    <?php
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+            $db = mysqli_connect("localhost","gallery","password","gallery");
+            if(mysqli_connect_errno()){
+                printf("Connection failed %s<br/>",mysqli_error());
+                exit();
+            }
+            
+            $query = "SELECT * from userdata";
+            $result = mysqli_query($db,$query);
+            // extract post req and search for username
+            $username = $_POST["username"];
+            $back=search_db($result,$username);
+            if($back){
+                $message = "user already exist";
+            }
+            else{
+                $password = $_POST["password"];
+                $email = $_POST["email"];
+                $phone = $_POST["phone"];
+                
+                $query = "INSERT INTO userdata (username, password, email, phone)
+                        VALUES ('$username', '$password', '$email', '$phone')";
+                $result = mysqli_query($db,$query);
+                if($result) $message="user added";
+            }
+        }
+
+        function search_db($result,$username){
+            while($row = mysqli_fetch_assoc($result)){
+                if($username==$row["username"]){
+                    return $row;
+                }
+            }
+            return false;
+        }
+    ?>
+    <h1>Sign Up</h1>
+    <hr>
+    <form action="signup.html" method="POST">
+        <label>User name <input type="text" name="username"></label>
+        <label>Password <input type="password" name="password"></label>
+        <label>Email <input type="email" name="email"></label>
+        <label>Phone <input type="number" name="phone"></label>
+        <input type="submit" value="Login">
+        <a href="index.html"><button type="button">Back</button></a>
+        <?php
+            print '<p style="color:red">'.$message."</p>";
+        ?>
+    </form>
+</body>
 </html>
