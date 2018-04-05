@@ -90,10 +90,11 @@ function validator(signup){
                     validator(true);
                 }
             };
-            xhttp.open("POST", "php\\reg.php?q=signup", true);
+            xhttp.open("POST", "php\\reg.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send('type=login&username='+username+"&password="+password);
         }
     });
     errorText.style.display="block";
+    signup=false;
 }
