@@ -9,17 +9,28 @@
 
 </head>
 <body>
-<nav>
-	<i class="far fa-image"></i><p>Simple Gallery</p>
-	<button>Login</button>
-	<button>Sign Up</button>
-	<a href="userdata.html">Hi, user</a>
-	<ul>
-		<li><a id="index" href="index.html">Home</a></li>
-		<li><a id="gallery" href="gallery.html">Gallery</a></li>
-		<li><a href="about.html">About</a></li>
-	</ul>
-</nav>
+	<nav>
+		<i class="far fa-image"></i><p>Simple Gallery</p>
+		<?php
+			if($_COOKIE["auth"]=="true"){
+					$username = $_COOKIE["username"];
+					echo '<button id="logout">Log Out</button>
+						<a href="userdata.html" id="username">Hi, '."$username</a>";
+				}
+			else{
+				echo '<button id="login">Login</button>
+				<button id="signup">Sign Up</button>';
+			}
+		?>
+		<ul>
+			<li><a id="index" href="index.html">Home</a></li>
+			<li><a href="gallery.html">Gallery</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	</nav>
+	<div class="reg-back">
+		<div class="form-wrap"></div>
+	</div>
 <h1>A Simple Image Gallery</h1>
 <form action="">
     <div class="search">
